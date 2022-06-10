@@ -104,3 +104,4 @@ ENV/
 
 # mypy
 .mypy_cache/
+!/cfn-ses-provider-0.8.2.zip
