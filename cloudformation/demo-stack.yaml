@@ -67,3 +67,22 @@ Resources:
       ForwardingEnabled: false
       ServiceToken: !Sub 'arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:binxio-cfn-ses-provider'
 
+  SpfRecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: !Ref HostedZoneId
+      Name: !Sub ${DomainName}.
+      Type: TXT
+      TTL: 900
+      ResourceRecords:
+        - '"v=spf1 include:amazonses.com ~all"'
+
+  DmarcRecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: !Ref HostedZoneId
+      Name: !Sub _dmarc.${DomainName}.
+      Type: TXT
+      TTL: 900
+      ResourceRecords:
+        - '"v=DMARC1; p=none; sp=none;"'

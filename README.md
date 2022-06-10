@@ -1,7 +1,10 @@
 
 - This is a detached fork of https://github.com/binxio/cfn-ses-provider.
-- It is based on https://github.com/binxio/cfn-ses-provider/commit/268f88205ddec7b4d286979834b251aa8319e430.
-- s3://binxio-public-eu-west-1/lambdas/cfn-ses-provider-0.8.2.zip was added.
+- Based on https://github.com/binxio/cfn-ses-provider/commit/268f88205ddec7b4d286979834b251aa8319e430.
+- Add: s3://binxio-public-eu-west-1/lambdas/cfn-ses-provider-0.8.2.zip
+- Add to cloudformation/demo-stack:
+  - SPF record for sending with SES only.
+  - Liberal DMARC policy record.
 
 # cfn-ses-provider
 A  CloudFormation custom provider for managing SES Domain Identities, Identity Notifications, DKIM tokens and the active receipt rule set.
